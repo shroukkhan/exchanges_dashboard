@@ -5,6 +5,7 @@ services:
     environment:
       - CONFIG_FILE=/scraper/config.json
       - DATABASE_PATH=sqlite:////data/exchanges_db.sqlite
+    restart: unless-stopped
     volumes:
       - $PWD/data:/data
       - /etc/timezone:/etc/timezone:ro
@@ -13,6 +14,7 @@ services:
     image: metabase/metabase:latest
     container_name: metabase
     hostname: metabase
+    restart: unless-stopped
     volumes:
       - /dev/urandom:/dev/random:ro
       - $PWD:/metabase-data
