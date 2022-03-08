@@ -13,7 +13,7 @@ services:
   metabase-app-bybit:
     image: metabase/metabase:latest
     container_name: metabase-bybit
-    hostname: metabase
+    hostname: metabase-bybit
     restart: unless-stopped
     volumes:
       - /dev/urandom:/dev/random:ro
